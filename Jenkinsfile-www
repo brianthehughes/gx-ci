@@ -1,1 +1,10 @@
-
+pipeline {
+    agent any
+    stages {
+        stage('Stage 1 - Copy to /storage/www') {
+            steps {
+                sh 'cp /usr/local/ghostbsd-build && cp iso /storage/www'
+            }
+        }
+    }
+}
