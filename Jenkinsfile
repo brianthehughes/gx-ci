@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Stage 4 - Single Build - GX Unstable') {
             steps {
-                sh 'cd /storage/jenkins/ghostbsd-build && ./build.sh -d gx -b unstable'
+                sh 'cd ghostbsd-build && ./build.sh -d gx -b unstable'
             }
         }
     }
