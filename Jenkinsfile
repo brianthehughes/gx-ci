@@ -6,9 +6,20 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 }
         }
-        stage('Stage 2') {
+        stage('Stage 2 - Cleaning') {
             steps {
-                echo 'Hey'
+                echo "Purge ghostbsd-build folder..."
+                sh 'cd /storage/jenkins && rm -rf ghostbsd-build || true'
+            }
+        }
+        stage('Stage 3 - Git Clone') {
+            steps {
+                sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 || true'
+            }
+        }
+        stage('Stage 4 - Single Build - GX Unstable') {
+            steps {
+                sh 'cd /storage/jenkins/ghostbsd-build && ./build.sh -d gx -b unstable'
             }
         }
     }
