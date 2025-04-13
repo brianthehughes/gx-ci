@@ -1,16 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Stage 1') {
             steps {
-                sh 'echo "Hello world!" || true'
+                echo 'Hello world!'
                 }
         }
-        stage('List') {
+        stage('Stage 2') {
             steps {
-                sh 'cd /usr/local' || true'
-                sh 'ls -lah ||  true'
-                sh 'echo "Hey"
+                echo "Hey"
             }
         }
     }
