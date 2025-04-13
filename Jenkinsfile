@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                fastfetch
+                sh fastfetch
             }
         }
     }
