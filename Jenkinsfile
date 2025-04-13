@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Stage 3 - Git Clone') {
             steps {
-                sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 || true'
+                sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
         stage('Stage 4 - Single Build - GX Unstable') {
