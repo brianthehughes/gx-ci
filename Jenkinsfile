@@ -9,7 +9,7 @@ pipeline {
         stage('Stage 2 - Cleaning') {
             steps {
                 echo "Purge ghostbsd-build folder..."
-                sh 'cd /storage/jenkins && rm -rf ghostbsd-build || true'
+                sh 'rm -rf /usr/local/ghostbsd-build || true'
             }
         }
         stage('Stage 3 - Git Clone') {
