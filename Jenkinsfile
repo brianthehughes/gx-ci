@@ -18,7 +18,7 @@ pipeline {
                 sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
-        stage('Stage 4 - Single Build - GX Unstable') {
+        stage('Stage 4 - Bulk Buld per bulkbuild.sh') {
             steps {
                 sh 'cd ghostbsd-build && ./bulkbuild.sh'
             }
