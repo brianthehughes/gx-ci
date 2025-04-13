@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                echo 'Hello world!'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 }
         }
         stage('Stage 2') {
             steps {
-                echo "Hey"
+                echo 'Hey'
             }
         }
     }
