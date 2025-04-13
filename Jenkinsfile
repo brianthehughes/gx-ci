@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello world!'
-                sh '/usr/local/bin/fastfetch'
+                sh 'echo "Hello world!"'
+                sh 'ls -lah'
             }
         }
     }
