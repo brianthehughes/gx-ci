@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello world!'
-                /usr/local/bin/fastfetch
+                sh '/usr/local/bin/fastfetch'
             }
         }
     }
