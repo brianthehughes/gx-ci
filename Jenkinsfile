@@ -20,12 +20,7 @@ pipeline {
         }
         stage('Stage 4 - Single Build - GX Unstable') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gx -b unstable'
-            }
-        }
-        stage('Stage 5 - Copy to /storage/www') {
-            steps {
-                sh 'cp /usr/local/ghostbsd-build && cp iso /storage/www'
+                sh 'cd ghostbsd-build && ./bulkbuild.sh'
             }
         }
     }
