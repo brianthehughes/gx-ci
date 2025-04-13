@@ -8,8 +8,10 @@ pipeline {
         }
         stage('Stage 2 - Cleaning') {
             steps {
-                echo "Purge ghostbsd-build folder..."
-                sh 'rm -rf /usr/local/ghostbsd-build || true'
+                echo "Purge /usr/local/ghostbsd-build folder..."
+                sh 'cd /usr/local/ghostbsd-build && rm -rf * || true'
+                echo "Purge ./ghostbsd-build folder..."
+                sh 'rm -rf ghostbsd-build || true'
             }
         }
         stage('Stage 3 - Git Clone') {
