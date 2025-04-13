@@ -8,20 +8,24 @@ pipeline {
         }
         stage('Stage 2 - Cleaning') {
             steps {
-                echo "Purge /usr/local/ghostbsd-build folder..."
-                sh 'cd /usr/local/ghostbsd-build && rm -rf * || true'
-                echo "Purge ./ghostbsd-build folder..."
+                echo "Purge ./ghostbsd-build repository folder..."
                 sh 'rm -rf ghostbsd-build || true'
             }
         }
         stage('Stage 3 - Git Clone') {
             steps {
+                echo "Clone repository..."
                 sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
         stage('Stage 4 - Single Build - GX Unstable') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d gx -b unstable'
+            }
+        }
+        stage('Stage 5 - Copy to /storage/www') {
+            steps {
+                sh 'cp /usr/local/ghostbsd-build && cp iso /storage/www'
             }
         }
     }
