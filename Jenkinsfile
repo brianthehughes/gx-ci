@@ -8,7 +8,9 @@ pipeline {
         }
         stage('List') {
             steps {
-                sh 'ls -lah'
+                sh 'cd /usr/local' || true'
+                sh 'ls -lah ||  true'
+                sh 'echo "Hey"
             }
         }
     }
