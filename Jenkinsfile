@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run bulkbuild.sh') {
             steps {
-                sh 'cd ghostbsd-build && ./bulkbuild.sh'
+                sh 'cd ghostbsd-build && ./build.sh -d lxqt -b unstable'
             }
         }
     }
