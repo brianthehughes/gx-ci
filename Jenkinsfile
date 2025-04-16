@@ -9,9 +9,14 @@ pipeline {
                 sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
-        stage('Run bulkbuild.sh') {
+        stage('Build LXQT Unstable') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d lxqt -b unstable'
+            }
+        }
+        stage('Build GX Unstable') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d gx -b unstable'
             }
         }
     }
