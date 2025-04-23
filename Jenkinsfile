@@ -26,7 +26,7 @@ pipeline {
         }
         stage('build XFCE') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d xcfe -b unstable'
+                sh 'cd ghostbsd-build && ./build.sh -d xfce -b unstable'
             }
         }
     }
