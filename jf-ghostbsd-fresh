@@ -5,8 +5,6 @@ pipeline {
             steps {
                 echo "Purge ./ghostbsd-build repository folder..."
                 sh 'rm -rf ghostbsd-build || true'
-                echo "Clone repository..."
-                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=master || true'
             }
         }
         stage('Clone') {
