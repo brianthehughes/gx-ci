@@ -5,8 +5,6 @@ pipeline {
             steps {
                 echo "Prep ./ghostbsd-build repository folder..."
                 sh 'rm -rf ghostbsd-build || true'
-                echo "Prep GhostBSD-build working directory..."
-                sh 'rm -rf /usr/local/ghostbsd-build/*'
             }
         }
         stage('Clone') {
