@@ -1,11 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Prep & Clone') {
+        stage('Prep Clone') {
             steps {
-                echo "Purge ./ghostbsd-build repository folder..."
+                echo "Prep ./ghostbsd-build repository folder..."
                 sh 'rm -rf ghostbsd-build || true'
-                echo "Clone repository..."
+                echo "Prep Jenkins/buildbsd-build working directory..."
+                sh 'rm -rf /usr/jenkins/ghostbsd-build || true'
+                echo "Clone experimental unstable branch..."
                 sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
