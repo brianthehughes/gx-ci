@@ -18,25 +18,5 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d kde -b unstable'
             }
         }
-        stage('LXQT') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d lxqt -b unstable'
-            }
-        }
-        stage('GX') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gx -b unstable'
-            }
-        }
-        stage('MATE') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d mate -b unstable'
-            }
-        }
-        stage('XFCE') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d xfce -b unstable'
-            }
-        }
     }
 }
