@@ -13,7 +13,7 @@ pipeline {
                 sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=gershwin || true'
             }
         }
-        stage('MATE') {
+        stage('gershwin') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d gershwin -b unstable'
             }
