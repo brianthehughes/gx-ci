@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo "Clone repository..."
-                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=gershwin || true'
+                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=master || true'
             }
         }
         stage('gershwin') {
