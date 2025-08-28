@@ -15,27 +15,27 @@ pipeline {
         }
         stage('KDE') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d kde -b stable'
+                sh 'cd ghostbsd-build && ./build.sh -d kde -b release'
             }
         }
         stage('LXQT') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d lxqt -b stable'
+                sh 'cd ghostbsd-build && ./build.sh -d lxqt -b release'
             }
         }
         stage('GX') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gx -b stable'
+                sh 'cd ghostbsd-build && ./build.sh -d gx -b release'
             }
         }
         stage('MATE') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d mate -b stable'
+                sh 'cd ghostbsd-build && ./build.sh -d mate -b release'
             }
         }
         stage('XFCE') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d xfce -b stable'
+                sh 'cd ghostbsd-build && ./build.sh -d xfce -b release'
             }
         }
     }
