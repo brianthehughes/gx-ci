@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Gerswhin') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gerswhin -b release'
+                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b release'
             }
         }
 
