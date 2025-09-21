@@ -15,7 +15,7 @@ pipeline {
         }
         stage('KDE') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d kde -b unstable'
+                sh 'cd ghostbsd-build && ./build.sh -d kde -b release'
             }
         }
     }
