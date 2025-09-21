@@ -18,6 +18,11 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d kde -b release'
             }
         }
+        stage('Gerswhin') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d gerswhin -b release'
+            }
+        }
         stage('LXQT') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d lxqt -b release'
