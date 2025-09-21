@@ -25,7 +25,7 @@ pipeline {
 	    }
         stage('Gershwin') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gerswhin -b unstable'
+                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b unstable'
             }
         }
     }
