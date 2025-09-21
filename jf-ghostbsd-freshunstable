@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b unstable'
             }
-	}
+	    }
         stage('Gershwin') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d gerswhin -b unstable'
