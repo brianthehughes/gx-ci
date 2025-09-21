@@ -13,11 +13,11 @@ pipeline {
                 sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=gx0a || true'
             }
         }
-#        stage('KDE') {
-#            steps {
-#                sh 'cd ghostbsd-build && ./build.sh -d kde -b release'
-#            }
-#        }
+//        stage('KDE') {
+//           steps {
+//                sh 'cd ghostbsd-build && ./build.sh -d kde -b release'
+//            }
+//        }
         stage('Gerswhin') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d gerswhin -b release'
