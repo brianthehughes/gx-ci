@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Prep to Build') {
+            steps {
+                echo "Prep ./ghostbsd-build repository folder..."
+                sh 'rm -rf ghostbsd-build || true'
+
+                echo "Prep Jenkins/buildbsd-build working directory..."
+                sh 'rm -rf /usr/jenkins/ghostbsd-build || true'
+
+                echo "Clone experimental unstable branch..."
+                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=releng/14.3'
+            }
+        }
+        stage('KDE Plasma') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b testing'
+            }
+        }
+    }
+}
