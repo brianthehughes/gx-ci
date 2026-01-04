@@ -35,10 +35,5 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d gershwin -b unstable'
             }
         }
-        stage('Plasma') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d plasma -b unstable'
-            }
-        }
     }
 }
