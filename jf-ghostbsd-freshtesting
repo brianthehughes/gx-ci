@@ -18,6 +18,11 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d mate -b testing'
             }
         }
+        stage('build MATE_OEM') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d mate_oem -b testing'
+            }
+        }
         stage('build XFCE') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b testing'
