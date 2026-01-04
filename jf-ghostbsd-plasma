@@ -15,7 +15,7 @@ pipeline {
         }
         stage('KDE Plasma') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d plasma -b testing'
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b unstable'
             }
         }
     }
