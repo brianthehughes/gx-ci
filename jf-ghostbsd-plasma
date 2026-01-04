@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'FreeBSD15'
+    }
     stages {
         stage('Prep to Build') {
             steps {
