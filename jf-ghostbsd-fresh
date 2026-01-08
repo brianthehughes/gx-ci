@@ -18,14 +18,14 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d mate -b release'
             }
         }
-        stage('build MATE_OEM') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d mate_oem -b release'
-            }
-        }
         stage('build XFCE') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b release'
+            }
+        }
+        stage('build Plasma') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b release'
             }
         }
     }
