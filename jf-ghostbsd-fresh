@@ -23,10 +23,5 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b release'
             }
         }
-        stage('build Gershwin') {
-            steps {
-                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b release'
-            }
-        }
     }
 }
