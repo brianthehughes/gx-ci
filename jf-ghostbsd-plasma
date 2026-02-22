@@ -12,7 +12,7 @@ pipeline {
                 sh 'rm -rf /usr/jenkins/ghostbsd-build || true'
 
                 echo "Clone experimental unstable branch..."
-                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=releng/14.3'
+                sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=fix'
             }
         }
         stage('KDE Plasma') {
