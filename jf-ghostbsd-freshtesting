@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 echo "Clone repository..."
-                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=releng/14.3 || true'
+                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=master || true'
             }
         }
         stage('build MATE') {
@@ -21,6 +21,16 @@ pipeline {
         stage('build XFCE') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b testing'
+            }
+
+        stage('build GERSHWIN') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b testing'
+            }
+
+        stage('build PLASMA') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b testing'
             }
         }
     }
