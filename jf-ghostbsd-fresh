@@ -23,5 +23,15 @@ pipeline {
                 sh 'cd ghostbsd-build && ./build.sh -d xfce -b release'
             }
         }
+        stage('build GERSHWIN') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b release'
+            }
+        }
+        stage('build PLASMA') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b release'
+            }
+        }
     }
 }
