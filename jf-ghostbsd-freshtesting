@@ -29,12 +29,11 @@ pipeline {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d gershwin -b testing'
             }
-
+        }
         stage('build PLASMA') {
             steps {
                 sh 'cd ghostbsd-build && ./build.sh -d plasma -b testing'
             }
         }
     }
-}
 }
