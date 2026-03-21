@@ -11,13 +11,13 @@ pipeline {
                 echo "Prep Jenkins/buildbsd-build working directory..."
                 sh 'rm -rf /usr/jenkins/ghostbsd-build || true'
 
-                echo "Clone experimental unstable branch..."
-                sh 'git clone https://github.com/brianthehughes/ghostbsd-build --depth=1 --branch=fix'
+                echo "Clone for GhostBSD testing FreeBSD 15..."
+                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=master'
             }
         }
-        stage('KDE Plasma') {
+        stage('plasma testing') {
             steps {
-                sh 'cd ghostbsd-build && ./build.sh -d plasma -b unstable'
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b testing'
             }
         }
     }
