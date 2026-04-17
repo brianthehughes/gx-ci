@@ -1,0 +1,41 @@
+pipeline {
+        agent {
+        label 'FreeBSD15'
+    }
+    stages {
+        stage('Prep') {
+            steps {
+                echo "Prep ./ghostbsd-build repository folder..."
+                sh 'rm -rf ghostbsd-build || true'
+            }
+        }
+        stage('Clone') {
+            steps {
+                echo "Clone repository..."
+                sh 'git clone https://github.com/ghostbsd/ghostbsd-build --depth=1 --branch=master || true'
+            }
+        }
+        stage('build MATE') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d mate -b release'
+            }
+        }
+        stage('build XFCE') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d xfce -b release'
+            }
+        }
+        stage('build GERSHWIN') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d gershwin -b release'
+            }
+        }
+/*
+        stage('build PLASMA') {
+            steps {
+                sh 'cd ghostbsd-build && ./build.sh -d plasma -b release'
+            }
+        }
+*/
+    }
+}
